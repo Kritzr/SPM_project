@@ -51,7 +51,9 @@ model Meeting {
   id          Int          @id @default(autoincrement())
   title       String
   description String?
-  date        DateTime
+  scheduledAt DateTime
+  startedAt   DateTime?
+  endedAt     DateTime?
   group       Group        @relation(fields: [groupId], references: [id])
   groupId     Int
   host        User         @relation("UserMeetings", fields: [hostId], references: [id])
@@ -60,6 +62,7 @@ model Meeting {
   attendance  Attendance[]
   createdAt   DateTime     @default(now())
 }
+
 
 model File {
   id         Int      @id @default(autoincrement())
@@ -71,13 +74,16 @@ model File {
 }
 
 model Attendance {
-  id        Int      @id @default(autoincrement())
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
-  meeting   Meeting  @relation(fields: [meetingId], references: [id])
-  meetingId Int
-  status    Boolean  @default(false)
-  markedAt  DateTime @default(now())
+  id              Int      @id @default(autoincrement())
+  user            User     @relation(fields: [userId], references: [id])
+  userId          Int
+  meeting         Meeting  @relation(fields: [meetingId], references: [id])
+  meetingId       Int
+  status          Boolean  @default(false)
+  joinedAt        DateTime?
+  leftAt          DateTime?
+  durationSeconds Int?
+  markedAt        DateTime @default(now())
 
   @@unique([meetingId, userId])
 }
