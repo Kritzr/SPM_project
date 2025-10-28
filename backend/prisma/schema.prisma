@@ -1,0 +1,89 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  OWNER
+  PARTICIPANT
+}
+
+model User {
+  id             Int           @id @default(autoincrement())
+  name           String
+  email          String        @unique
+  password       String
+  role           Role          @default(PARTICIPANT)
+  memberships    GroupMember[]
+  ownedGroups    Group[]       @relation("OwnerGroups")
+  hostedMeetings Meeting[]     @relation("UserMeetings")
+  attendance     Attendance[]
+  createdAt      DateTime      @default(now())
+}
+
+model Group {
+  id          Int           @id @default(autoincrement())
+  name        String
+  description String?
+  owner       User          @relation("OwnerGroups", fields: [ownerId], references: [id])
+  ownerId     Int
+  members     GroupMember[]
+  meetings    Meeting[]
+  createdAt   DateTime      @default(now())
+}
+
+model GroupMember {
+  id       Int      @id @default(autoincrement())
+  group    Group    @relation(fields: [groupId], references: [id])
+  groupId  Int
+  user     User     @relation(fields: [userId], references: [id])
+  userId   Int
+  joinedAt DateTime @default(now())
+
+  @@unique([groupId, userId])
+}
+
+model Meeting {
+  id          Int          @id @default(autoincrement())
+  title       String
+  description String?
+  scheduledAt DateTime
+  startedAt   DateTime?
+  endedAt     DateTime?
+  group       Group        @relation(fields: [groupId], references: [id])
+  groupId     Int
+  host        User         @relation("UserMeetings", fields: [hostId], references: [id])
+  hostId      Int
+  files       File[]
+  attendance  Attendance[]
+  createdAt   DateTime     @default(now())
+}
+
+
+model File {
+  id         Int      @id @default(autoincrement())
+  fileName   String
+  fileUrl    String
+  meeting    Meeting  @relation(fields: [meetingId], references: [id])
+  meetingId  Int
+  uploadedAt DateTime @default(now())
+}
+
+model Attendance {
+  id              Int      @id @default(autoincrement())
+  user            User     @relation(fields: [userId], references: [id])
+  userId          Int
+  meeting         Meeting  @relation(fields: [meetingId], references: [id])
+  meetingId       Int
+  status          Boolean  @default(false)
+  joinedAt        DateTime?
+  leftAt          DateTime?
+  durationSeconds Int?
+  markedAt        DateTime @default(now())
+
+  @@unique([meetingId, userId])
+}

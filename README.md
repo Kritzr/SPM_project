@@ -1,18 +1,16 @@
-# SPM_project
+# 🎥 Meeting Platform - SPM Project
 
-# 🎥 LetsMeet - Video Conferencing Application
+A full-featured video conferencing platform built with React, WebRTC, Express, and Socket.io.
 
 <div align="center">
 
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Socket.io](https://img.shields.io/badge/Socket.io-4.5.4-010101?style=for-the-badge&logo=socket.io&logoColor=white)
-![WebRTC](https://img.shields.io/badge/WebRTC-Enabled-FF6B6B?style=for-the-badge&logo=webrtc&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-
-**A full-featured video conferencing platform built with React, WebRTC, and Socket.io**
-
-[🚀 Live Demo](#) • [📖 Documentation](#features) • [🐛 Report Bug](#) • [✨ Request Feature](#)
+![React](https://img.shields.io/badge/React-19.2.0-61DAFB?style=flat-square&logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=node.js)
+![Socket.io](https://img.shields.io/badge/Socket.io-4.8.1-010101?style=flat-square&logo=socket.io)
+![WebRTC](https://img.shields.io/badge/WebRTC-Enabled-FF6B6B?style=flat-square&logo=webrtc)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat-square&logo=tailwind-css)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma)
 
 </div>
 
@@ -25,33 +23,28 @@
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
 - [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
-- [Screenshots](#screenshots)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Usage](#usage)
 
 ---
 
 ## 🎯 About
 
-**LetsMeet** is a modern, real-time video conferencing application that enables seamless communication between multiple participants. Built with cutting-edge web technologies, it provides a robust platform for virtual meetings, online classes, team collaborations, and more.
+This is an integrated meeting platform that combines:
+- **Backend API** - RESTful API for user management, meetings, groups, and attendance
+- **Signaling Server** - WebRTC signaling server for real-time video/audio connections
+- **React Client** - Modern frontend for video conferencing with chat and whiteboard
 
-### ✨ Why LetsMeet?
+### Key Features
 
-- 🆓 **Completely Free** - No hidden costs or premium tiers
-- 🔒 **Privacy-Focused** - Peer-to-peer connections for enhanced security
-- 🚀 **Easy to Use** - No sign-up required, just create and share a link
-- 🎨 **Modern UI** - Clean, intuitive interface built with Tailwind CSS
-- 📱 **Responsive** - Works seamlessly on desktop, tablet, and mobile
+- 🆓 **Free & Open Source**
+- 🔒 **Secure** - JWT authentication and encrypted communications
+- 🚀 **Easy to Deploy** - All services integrated and configured
+- 📱 **Responsive** - Works on desktop, tablet, and mobile
 
 ---
 
-## 🌟 Features
+## ✨ Features
 
 ### Core Functionality
 
@@ -63,41 +56,36 @@
 | 💬 **Real-time Chat** | Send messages during video calls | ✅ Implemented |
 | 🖥️ **Screen Sharing** | Share your screen with all participants | ✅ Implemented |
 | ✏️ **Collaborative Whiteboard** | Draw and collaborate in real-time | ✅ Implemented |
-| 🔗 **Easy Room Sharing** | Share meeting URL with one click | ✅ Implemented |
-| 🔔 **Join/Leave Notifications** | Get notified when participants join or leave | ✅ Implemented |
-| 📊 **Participant Counter** | See how many people are in the meeting | ✅ Implemented |
-
-### Advanced Features
-
-- **Responsive Video Grid** - Automatically adjusts layout based on participant count
-- **Audio/Video Indicators** - Real-time status display for all participants
-- **Auto-reconnection** - Handles network disruptions gracefully
-- **Browser Compatibility** - Works on Chrome, Firefox, Safari, and Edge
-- **No Installation Required** - Runs entirely in the browser
+| 👤 **User Management** | Registration, authentication, and profiles | ✅ Implemented |
+| 👥 **Group Management** | Create and manage groups | ✅ Implemented |
+| 📅 **Meeting Scheduling** | Schedule and manage meetings | ✅ Implemented |
+| ✅ **Attendance Tracking** | Track meeting attendance | ✅ Implemented |
+| 📁 **File Uploads** | Upload and manage files (Azure Blob Storage) | ✅ Implemented |
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **React 18** - Modern UI framework with hooks
-- **React Router v6** - Client-side routing
-- **Tailwind CSS** - Utility-first CSS framework
-- **Lucide React** - Beautiful icon library
-- **Socket.io Client** - Real-time bidirectional communication
-- **Simple-peer** - WebRTC wrapper for easy peer connections
-
 ### Backend
-- **Node.js** - JavaScript runtime
-- **Express** - Fast, minimalist web framework
-- **Socket.io** - WebSocket library for real-time features
-- **CORS** - Cross-origin resource sharing
-- **UUID** - Unique identifier generation
+- **Express** - Web framework
+- **Prisma** - ORM for PostgreSQL
+- **JWT** - Authentication
+- **bcrypt** - Password hashing
+- **Azure Blob Storage** - File storage
+- **CORS** - Cross-origin requests
 
-### Communication Protocols
-- **WebRTC** - Peer-to-peer video/audio streaming
-- **Socket.io** - Signaling and real-time messaging
-- **STUN Servers** - NAT traversal for peer connections
+### Signaling Server
+- **Socket.io** - WebSocket server
+- **Express** - HTTP server
+- **UUID** - Unique identifiers
+
+### Frontend
+- **React 19** - UI framework
+- **React Router** - Client-side routing
+- **Socket.io Client** - Real-time communication
+- **Simple-peer** - WebRTC wrapper
+- **Tailwind CSS** - Styling
+- **Lucide React** - Icons
 
 ---
 
@@ -105,40 +93,31 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         CLIENT (React)                       │
-├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │   Landing    │  │    Room      │  │   Controls   │     │
-│  │   Component  │  │   Component  │  │   Component  │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│                                                              │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │   VideoGrid  │  │     Chat     │  │  Whiteboard  │     │
-│  │   Component  │  │   Component  │  │   Component  │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
-│                                                              │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │        MeetingContext (Global State)                │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                                                              │
-│  ┌──────────────┐              ┌──────────────┐           │
-│  │  useSocket   │              │  useWebRTC   │           │
-│  │     Hook     │              │     Hook     │           │
-│  └──────────────┘              └──────────────┘           │
+│                    React Client (Port 3000)                  │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐          │
+│  │  Landing   │  │    Room    │  │  Controls  │          │
+│  └────────────┘  └────────────┘  └────────────┘          │
+│  ┌─────────────────────────────────────────────────┐      │
+│  │        MeetingContext (Global State)            │      │
+│  └─────────────────────────────────────────────────┘      │
 └─────────────────────────────────────────────────────────────┘
-                           ↕ Socket.io
+                      ↕ Socket.io
 ┌─────────────────────────────────────────────────────────────┐
-│                    SERVER (Node.js/Express)                  │
-├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐     │
-│  │   Socket.io  │  │     Room     │  │     User     │     │
-│  │    Server    │  │  Management  │  │  Management  │     │
-│  └──────────────┘  └──────────────┘  └──────────────┘     │
+│              Signaling Server (Port 5000)                     │
+│           WebRTC Signaling & Real-time Events                │
 └─────────────────────────────────────────────────────────────┘
-                           ↕ WebRTC (P2P)
+                      ↕ HTTP REST
 ┌─────────────────────────────────────────────────────────────┐
-│                      PEER CONNECTIONS                        │
-│              (Direct Video/Audio Streaming)                  │
+│              Backend API Server (Port 8080)                   │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐          │
+│  │   Auth     │  │   Groups   │  │  Meetings  │          │
+│  └────────────┘  └────────────┘  └────────────┘          │
+│  ┌────────────┐  ┌────────────┐  ┌────────────┐          │
+│  │Attendance │  │   Files    │  │   Users    │          │
+│  └────────────┘  └────────────┘  └────────────┘          │
+│  ┌─────────────────────────────────────────────────┐      │
+│  │          Prisma ORM + PostgreSQL                │      │
+│  └─────────────────────────────────────────────────┘      │
 └─────────────────────────────────────────────────────────────┘
 ```
 
@@ -148,335 +127,196 @@
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-
-- **Node.js** (v14.0.0 or higher)
-- **npm** (v6.0.0 or higher)
-- Modern web browser (Chrome recommended)
+- Node.js (v14 or higher)
+- npm or yarn
+- PostgreSQL database
+- (Optional) Azure Blob Storage account
 
 ### Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/letsmeet.git
-
-# Navigate to the project
-cd letsmeet
-
-# Install dependencies for both client and server
-cd server && npm install
-cd ../client && npm install
-
-# Start the application
-# Terminal 1 - Start server
-cd server
-npm run dev
-
-# Terminal 2 - Start client
-cd client
-npm start
-```
-
-The application will open automatically at `http://localhost:3000`
-
----
-
-## 📦 Installation
-
-### Detailed Installation Steps
-
-#### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/letsmeet.git
-cd letsmeet
-```
-
-#### 2. Server Setup
-```bash
-# Navigate to server directory
-cd server
-
-# Install dependencies
+# 1. Install root dependencies
 npm install
 
-# Create .env file
-echo "PORT=5000" > .env
-echo "CLIENT_URL=http://localhost:3000" >> .env
-```
+# 2. Install all service dependencies
+npm run install:all
 
-#### 3. Client Setup
-```bash
-# Navigate to client directory
-cd ../client
+# 3. Configure environment variables
+# Copy and edit the example files:
+cp backend/env.example backend/.env
+cp signaling-server/env.example signaling-server/.env
+cp client/env.example client/.env
 
-# Install dependencies
-npm install
+# 4. Setup database
+npm run prisma:generate
+npm run prisma:migrate
 
-# Create .env file
-echo "REACT_APP_SERVER_URL=http://localhost:5000" > .env
-
-# Install Tailwind CSS
-npm install -D tailwindcss postcss autoprefixer
-```
-
-#### 4. Configure Tailwind CSS
-
-Create `tailwind.config.js`:
-```javascript
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#6264a7',
-        secondary: '#464775',
-      }
-    },
-  },
-  plugins: [],
-}
-```
-
-Create `postcss.config.js`:
-```javascript
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-}
-```
-
-#### 5. Run the Application
-```bash
-# Terminal 1 - Server
-cd server
+# 5. Start all services
 npm run dev
-
-# Terminal 2 - Client
-cd client
-npm start
 ```
 
----
+### Detailed Setup
 
-## 💻 Usage
-
-### Creating a Meeting
-
-1. Open the application in your browser
-2. Enter your name
-3. Click "Create New Meeting"
-4. Allow camera and microphone permissions
-5. Share the meeting URL with participants
-
-### Joining a Meeting
-
-1. Click on the shared meeting link
-2. Enter your name
-3. Click "Join Meeting"
-4. Allow camera and microphone permissions
-
-### During a Meeting
-
-- **Mute/Unmute**: Click the microphone icon
-- **Camera On/Off**: Click the video camera icon
-- **Screen Share**: Click the monitor icon
-- **Chat**: Click the message icon to open chat sidebar
-- **Whiteboard**: Click the pen icon to open collaborative whiteboard
-- **Copy URL**: Click the copy icon to share meeting link
-- **Leave**: Click the red phone icon to leave the meeting
+See [SETUP.md](SETUP.md) for complete setup instructions.
 
 ---
 
 ## 📁 Project Structure
 
 ```
-letsmeet/
-├── client/                      # React frontend
-│   ├── public/
-│   │   └── index.html
+SPM_project/
+├── backend/                      # Express API Server (Port 8080)
 │   ├── src/
-│   │   ├── components/
-│   │   │   ├── Landing/
-│   │   │   │   └── Landing.jsx
-│   │   │   └── Room/
-│   │   │       ├── Room.jsx
-│   │   │       ├── VideoGrid.jsx
-│   │   │       ├── Controls.jsx
-│   │   │       ├── Chat.jsx
-│   │   │       └── Whiteboard.jsx
-│   │   ├── hooks/
-│   │   │   ├── useSocket.js
-│   │   │   └── useWebRTC.js
-│   │   ├── context/
-│   │   │   └── MeetingContext.jsx
-│   │   ├── App.jsx
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── package.json
-│   ├── tailwind.config.js
-│   ├── postcss.config.js
-│   └── .env
+│   │   ├── routes/              # API Routes (auth, groups, meetings, attendance, files)
+│   │   ├── middleware/          # Authentication middleware
+│   │   ├── services/            # Business logic (Azure Blob)
+│   │   ├── utils/               # Helper functions (JWT)
+│   │   └── app.js               # Express app configuration
+│   ├── prisma/
+│   │   └── schema.prisma        # Database schema
+│   └── package.json
 │
-└── server/                      # Node.js backend
-    ├── server.js
-    ├── package.json
-    └── .env
+├── signaling-server/             # Socket.io Server (Port 5000)
+│   ├── server.js                # WebRTC signaling server
+│   └── package.json
+│
+├── client/                       # React Frontend (Port 3000)
+│   ├── src/
+│   │   ├── components/          # React components
+│   │   │   ├── Landing/         # Landing page
+│   │   │   └── Room/            # Room page (VideoGrid, Chat, Controls, Whiteboard)
+│   │   ├── hooks/               # Custom hooks (useSocket, useWebRTC)
+│   │   ├── context/             # React context (MeetingContext)
+│   │   └── App.js               # Main app component
+│   └── package.json
+│
+├── package.json                  # Root package with scripts
+├── .gitignore                    # Git ignore rules
+└── SETUP.md                      # Detailed setup guide
 ```
 
 ---
 
-## 🔌 API Documentation
+## 💻 Usage
 
-### Socket Events
+### Development
 
-#### Client → Server
+Start all services in development mode:
 
-| Event | Payload | Description |
-|-------|---------|-------------|
-| `join-room` | `{ roomId, userName, userId }` | Join a meeting room |
-| `offer` | `{ offer, to }` | Send WebRTC offer |
-| `answer` | `{ answer, to }` | Send WebRTC answer |
-| `ice-candidate` | `{ candidate, to }` | Exchange ICE candidates |
-| `chat-message` | `{ roomId, message, userName }` | Send chat message |
-| `toggle-media` | `{ roomId, type, enabled }` | Update media status |
-| `whiteboard-draw` | `{ roomId, data }` | Update whiteboard |
-| `leave-room` | - | Leave the meeting |
+```bash
+npm run dev
+```
 
-#### Server → Client
+Or run services individually:
 
-| Event | Payload | Description |
-|-------|---------|-------------|
-| `existing-users` | `Array<User>` | List of users already in room |
-| `user-joined` | `{ socketId, userName, ... }` | New user joined |
-| `user-left` | `{ socketId, userName }` | User left the meeting |
-| `offer` | `{ offer, from }` | Receive WebRTC offer |
-| `answer` | `{ answer, from }` | Receive WebRTC answer |
-| `ice-candidate` | `{ candidate, from }` | Receive ICE candidate |
-| `chat-message` | `{ id, message, userName, timestamp }` | Receive chat message |
-| `user-media-changed` | `{ socketId, type, enabled }` | User toggled media |
+```bash
+npm run dev:backend      # Backend API only
+npm run dev:signaling    # Signaling server only
+npm run dev:client       # React client only
+```
 
-### REST API Endpoints
+### Services
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/` | Server health check |
-| POST | `/api/room/create` | Create new meeting room |
-| GET | `/api/room/:roomId` | Check if room exists |
+Once running, you can access:
 
----
+- **React Client**: http://localhost:3000
+- **Backend API**: http://localhost:8080/api
+- **Signaling Server**: http://localhost:5000 (WebSocket)
 
-## 📸 Screenshots
+### Using the Application
 
-### Landing Page
-*Beautiful, intuitive interface for creating or joining meetings*
+1. **Create a Meeting**
+   - Open http://localhost:3000
+   - Enter your name
+   - Click "Create New Meeting"
+   - Allow camera/microphone permissions
+   - Share the meeting URL with participants
 
-### Video Meeting
-*Multi-party video conferencing with responsive grid layout*
+2. **Join a Meeting**
+   - Click the shared meeting link
+   - Enter your name
+   - Click "Join Meeting"
+   - Allow camera/microphone permissions
 
-### Chat Interface
-*Real-time messaging sidebar during meetings*
-
-### Collaborative Whiteboard
-*Draw and collaborate with multiple participants*
+3. **During a Meeting**
+   - **Mute/Unmute**: Click microphone icon
+   - **Camera On/Off**: Click video icon
+   - **Screen Share**: Click monitor icon
+   - **Chat**: Click message icon
+   - **Whiteboard**: Click pen icon
+   - **Copy URL**: Click copy icon
+   - **Leave**: Click phone icon
 
 ---
 
-## 🗺️ Roadmap
+## 📊 API Endpoints
 
-### Phase 1 (Completed) ✅
-- [x] Basic video calling functionality
-- [x] Audio/video controls
-- [x] Real-time chat
-- [x] Screen sharing
-- [x] Collaborative whiteboard
-- [x] Responsive UI
+### Authentication
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `GET /api/auth/me` - Get current user
 
-### Phase 2 (In Progress) 🚧
-- [ ] User authentication (Sign up/Login)
-- [ ] Meeting scheduling
-- [ ] Recording functionality
-- [ ] Virtual backgrounds
-- [ ] Waiting room
-- [ ] Host controls (kick, mute participants)
+### Groups
+- `GET /api/groups` - Get all groups
+- `POST /api/groups` - Create group
+- `GET /api/groups/:id` - Get group details
+- `PUT /api/groups/:id` - Update group
+- `DELETE /api/groups/:id` - Delete group
 
-### Phase 3 (Planned) 📅
-- [ ] Breakout rooms
-- [ ] Meeting analytics
-- [ ] File sharing
-- [ ] Reactions and emojis
-- [ ] End-to-end encryption
-- [ ] Mobile app (React Native)
+### Meetings
+- `GET /api/meetings` - Get all meetings
+- `POST /api/meetings` - Create meeting
+- `GET /api/meetings/:id` - Get meeting details
+- `PUT /api/meetings/:id` - Update meeting
 
----
+### Attendance
+- `GET /api/attendance` - Get attendance records
+- `POST /api/attendance` - Mark attendance
 
-## 🤝 Contributing
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-### How to Contribute
-
-1. **Fork the Project**
-2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
-3. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
-4. **Push to the Branch** (`git push origin feature/AmazingFeature`)
-5. **Open a Pull Request**
-
-### Development Guidelines
-
-- Follow the existing code style
-- Write meaningful commit messages
-- Add comments for complex logic
-- Test your changes thoroughly
-- Update documentation as needed
+### Files
+- `GET /api/files` - List files
+- `POST /api/files` - Upload file
 
 ---
 
-## 🐛 Known Issues
+## 🔧 Configuration
 
-- Screen sharing may not work on Safari (WebRTC limitation)
-- Maximum 6 participants recommended for optimal performance
-- TURN server required for users behind strict NATs
+Each service requires environment variables. See:
+- `backend/env.example`
+- `signaling-server/env.example`
+- `client/env.example`
+
+Copy these to `.env` files and configure according to your setup.
+
+---
+
+## 🐛 Troubleshooting
+
+### Port Conflicts
+If a port is already in use, update the PORT in the respective `.env` file.
+
+### Database Connection
+Ensure PostgreSQL is running and the DATABASE_URL in `backend/.env` is correct.
+
+### CORS Issues
+Update CLIENT_URL in backend and signaling server `.env` files to match your client URL.
 
 ---
 
 ## 📝 License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+ISC
 
 ---
 
 ## 👤 Contact
-kritstudy15@gmail.com
 
-
-## 🙏 Acknowledgments
-
-- [React](https://reactjs.org/)
-- [Socket.io](https://socket.io/)
-- [WebRTC](https://webrtc.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Lucide Icons](https://lucide.dev/)
-- [Simple-peer](https://github.com/feross/simple-peer)
-
----
-
-## 📊 Project Statistics
-
-![GitHub stars](https://img.shields.io/github/stars/yourusername/letsmeet?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/letsmeet?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/yourusername/letsmeet?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/letsmeet)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/letsmeet)
+For questions or support, contact: kritstudy15@gmail.com
 
 ---
 
 <div align="center">
 
 **⭐ Star this repository if you find it helpful!**
-
-Made with ❤️ by [Your Name](https://github.com/yourusername)
 
 </div>

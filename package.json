@@ -1,0 +1,27 @@
+{
+  "name": "spm-meeting-platform",
+  "version": "1.0.0",
+  "description": "Meeting platform with integrated backend API, signaling server, and React client",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix signaling-server && npm install --prefix client",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix signaling-server\" \"npm run start --prefix client\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:signaling": "npm run dev --prefix signaling-server",
+    "dev:client": "npm run start --prefix client",
+    "start": "concurrently \"npm start --prefix backend\" \"npm start --prefix signaling-server\" \"npm run build --prefix client\"",
+    "build": "npm run build --prefix client",
+    "prisma:migrate": "npm run prisma migrate dev --prefix backend",
+    "prisma:generate": "npm run prisma generate --prefix backend"
+  },
+  "keywords": [
+    "video-conferencing",
+    "webrtc",
+    "meeting-platform"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
+
